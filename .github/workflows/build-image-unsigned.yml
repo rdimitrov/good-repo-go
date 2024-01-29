@@ -1,4 +1,4 @@
-name: Build an image - Unsigned (tags - latest, daily)
+name: image-unsigned(latest,daily)
 on:
   workflow_dispatch:
 

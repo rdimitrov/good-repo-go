@@ -1,4 +1,4 @@
-name: Build an image - Signed with GH Attestations (tags - latest) (malicious)
+name: image-signed-ghat(latest)-malicious
 on:
   workflow_dispatch:
 

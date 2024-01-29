@@ -1,4 +1,4 @@
-name: Build an image - Signed with Cosign (tags - latest, daily) (malicious)
+name: image-signed-cosign(latest,daily)-malicious
 on:
   workflow_dispatch:
 

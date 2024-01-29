@@ -1,4 +1,4 @@
-name: Build a binary - Signed with GH Attestations
+name: binary-signed-ghat
 
 on:
   workflow_dispatch:

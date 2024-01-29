@@ -1,4 +1,4 @@
-name: Build a binary - Signed with GH Attestations (malicious)
+name: binary-signed-ghat-malicious
 
 on:
   workflow_dispatch:

@@ -1,4 +1,4 @@
-name: Build a binary - Unsigned
+name: binary-unsigned
 
 on:
   workflow_dispatch:
