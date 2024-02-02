@@ -1,4 +1,4 @@
-name: image-signed-ghat(static)
+name: image-signed-ghat(static)-copied
 on:
   workflow_dispatch:
 
