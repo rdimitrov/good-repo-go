@@ -10,7 +10,13 @@ login:
 
 .PHONY: build-image
 build-image:
-	@echo "Building image..."
+	@echo "Building a safe image..."
+	docker build -t $(IMAGE_NAME) .
+
+.PHONY: build-malicious-image
+build-malicious-image:
+	@echo "Building a malicious image..."
+	@echo "// Maliciously altered on $$(date)" >> main.go
 	docker build -t $(IMAGE_NAME) .
 
 
@@ -30,4 +36,4 @@ sign-keypair:
 
 .PHONY: sign-oidc
 sign-oidc:
-	@cosign sign $(IMAGE_NAME) --output-certificate fulcio.crt.base64 --output-signature fulcio.sig
+	@cosign sign $(IMAGE_NAME)
