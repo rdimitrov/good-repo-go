@@ -2,20 +2,29 @@ package main
 
 import (
 	"fmt"
+	"github.com/go-kit/log"
 	"html"
-	"log"
+	stdlog "log"
 	"net/http"
+	"os"
 )
 
 func main() {
-	// comment
+	// Hey handler
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+		logMessage(fmt.Sprintf("Hey, %q", html.EscapeString(r.URL.Path)))
 	})
 
-	http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hi There Yolanda!")
+	// Bye handler
+	http.HandleFunc("/bye", func(w http.ResponseWriter, r *http.Request) {
+		logMessage(fmt.Sprintf("Bye, %q", html.EscapeString(r.URL.Path)))
 	})
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	// Listen and serve
+	stdlog.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func logMessage(msg string) {
+	logger := log.NewLogfmtLogger(os.Stdout)
+	logger.Log(msg)
 }
