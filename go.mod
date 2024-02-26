@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/go-kit/log v0.2.1
-	github.com/satori/go.uuid v1.2.0
+        github.com/satori/go.uuid v1.2.1-0.20181016170032-d91630c85102
 )
 
 require (
