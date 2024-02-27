@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/coreos/go-etcd v2.0.0+incompatible
 	github.com/go-kit/log v0.2.1
-	helm.sh/helm/v3 v3.12.2
+        helm.sh/helm/v3 v3.14.2
 )
 
 require (
