@@ -8,7 +8,7 @@ import (
 )
 
 // Example of listing helm chart releases for a given chart name
-func getHelmChartReleases(chartName string) ([]*release.Release, error) {
+func getHelmChartReleases(chartName *string) ([]*release.Release, error) {
 	var resultList []*release.Release
 
 	// Create the Helm client
@@ -30,7 +30,7 @@ func getHelmChartReleases(chartName string) ([]*release.Release, error) {
 
 	// Filter the releases by chart name
 	for _, rel := range releases {
-		if rel.Chart != nil && rel.Chart.Metadata != nil && rel.Chart.Metadata.Name == chartName {
+		if rel.Chart != nil && rel.Chart.Metadata != nil && rel.Chart.Metadata.Name == *chartName {
 			resultList = append(resultList, rel)
 		}
 	}

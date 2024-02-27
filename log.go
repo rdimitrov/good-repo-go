@@ -5,11 +5,7 @@ import (
 	"os"
 )
 
-// Trusty logging examples
-// github.com/go-kit/log // lower scored in Trusty
-// github.com/sirupsen/logrus // higher scored in Trusty
-
-// logMessage logs a message
+// Low-score example - logging - github.com/go-kit/log
 func newLogMsg(msg string) {
 	// Create a new logger
 	logger := log.NewLogfmtLogger(os.Stdout)
@@ -20,3 +16,12 @@ func newLogMsg(msg string) {
 		os.Exit(1)
 	}
 }
+
+//// High-score example - logging - github.com/sirupsen/logrus
+//func newLogMsg(msg string) {
+//	// Create a new logger
+//	logger := logrus.New()
+//
+//	// Log the message
+//	logger.Log(logrus.InfoLevel, msg)
+//}
